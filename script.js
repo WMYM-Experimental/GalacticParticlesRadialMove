@@ -22,20 +22,24 @@ const colorArray = [
   "#a663cc",
   "#ffc857",
   "#f6b684",
+  "#b7b7a4",
+  "#a8dadc",
+  "#ffafcc"
 ];
 
 const mouse = {
-  x: innerWidth / 2,
-  y: innerHeight / 2,
+  x: canvas.innerWidth / 2,
+  y: canvas.innerHeight / 2,
 };
 
+//event for "re-init" the animation
 addEventListener("resize", () => {
   canvas.width = innerWidth;
   canvas.height = innerHeight;
   init();
 });
 
-//keydown spacebar event
+//keydown spacebar event for "re-init" the animation
 document.addEventListener("keydown", (event) => {
   if (event.code === "Space") {
     canvas.width = innerWidth;
@@ -72,7 +76,7 @@ class Particle {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
     ctx.shadowColor = this.color;
-    ctx.shadowBlur = 20;
+    ctx.shadowBlur = 15;
     ctx.fillStyle = this.color;
     ctx.fill();
     ctx.closePath();
@@ -115,9 +119,9 @@ function animate() {
   radians += 0.003;
 
   if (mouseDown && alpha >= 0.03) {
-    alpha -= 0.01;
+    alpha -= 0.02;
   } else if (!mouseDown && alpha < 1) {
-    alpha += 0.01;
+    alpha += 0.02;
   }
 }
 
