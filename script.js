@@ -4,7 +4,7 @@ const ctx = canvas.getContext("2d");
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
-let numberOfParticles = 6000;
+let numberOfParticles = 6000*2;
 let radians = 0;
 let alpha = 1;
 let mouseDown = false;
@@ -93,8 +93,8 @@ function init() {
   particlesArray = [];
   for (let i = 0; i < numberOfParticles; i++) {
     let radius = getRandomInt(0.2, 2);
-    let x = getRandomInt(-3 * canvas.width, canvas.width - radius);
-    let y = getRandomInt(-3 * canvas.height, canvas.height - radius);
+    let x = getRandomInt(-4 * canvas.width, 4 * canvas.width - radius);
+    let y = getRandomInt(-4 * canvas.height, 4 * canvas.height - radius);
     let color = getRandomColor(colorArray);
     particlesArray.push(new Particle(x, y, radius, color));
   }
