@@ -4,7 +4,7 @@ const ctx = canvas.getContext("2d");
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
-let numberOfParticles = 6000;
+let numberOfParticles = 8000;
 let radians = 0;
 let alpha = 1;
 let mouseDown = false;
